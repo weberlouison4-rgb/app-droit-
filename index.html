@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Révision Droit L2 - Application de révision</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">⚖️</span>
+                    <h1>Révision Droit L2</h1>
+                </div>
+                <div class="header-info">
+                    <span class="score-display" id="globalScore">Score: <span id="scoreValue">0</span>/10</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="mainContent">
+            <!-- Home Page - Categories -->
+            <section class="page active" id="homePage">
+                <div class="page-header">
+                    <h2>Choisissez une matière</h2>
+                    <p class="page-subtitle">Sélectionnez la matière que vous souhaitez réviser</p>
+                </div>
+                <div class="categories-grid" id="categoriesGrid">
+                    <!-- Categories will be dynamically loaded from data.js -->
+                </div>
+            </section>
+
+            <!-- Subject Page - Sessions -->
+            <section class="page" id="subjectPage">
+                <div class="page-header">
+                    <button class="back-button" id="backToHome">← Retour aux matières</button>
+                    <h2 id="subjectTitle">Nom de la matière</h2>
+                    <p class="page-subtitle" id="subjectDescription">Description de la matière</p>
+                </div>
+                <div class="sessions-grid" id="sessionsGrid">
+                    <!-- Sessions will be dynamically loaded -->
+                </div>
+            </section>
+
+            <!-- Session Page - Exercises -->
+            <section class="page" id="sessionPage">
+                <div class="page-header">
+                    <button class="back-button" id="backToSubject">← Retour aux séances</button>
+                    <h2 id="sessionTitle">Nom de la séance</h2>
+                    <p class="page-subtitle" id="sessionDescription">Description de la séance</p>
+                </div>
+                <div class="exercises-grid" id="exercisesGrid">
+                    <!-- Exercises will be dynamically loaded -->
+                </div>
+            </section>
+
+            <!-- Exercise Page -->
+            <section class="page" id="exercisePage">
+                <div class="page-header">
+                    <button class="back-button" id="backToSession">← Retour aux exercices</button>
+                    <div class="exercise-info">
+                        <h2 id="exerciseTitle">Type d'exercice</h2>
+                        <p class="page-subtitle" id="exerciseDescription">Niveau: <span id="exerciseLevel">Facile</span></p>
+                    </div>
+                    <div class="exercise-score" id="exerciseScoreDisplay">
+                        Score: <span id="currentScore">0</span>/<span id="maxScore">10</span>
+                    </div>
+                </div>
+                <div class="exercise-container" id="exerciseContainer">
+                    <!-- Exercise content will be dynamically loaded -->
+                </div>
+                <div class="exercise-navigation" id="exerciseNavigation">
+                    <!-- Navigation buttons will appear after exercise completion -->
+                </div>
+            </section>
+
+            <!-- Results Page -->
+            <section class="page" id="resultsPage">
+                <div class="results-container">
+                    <div class="results-header">
+                        <h2>Résultats</h2>
+                        <div class="results-score-circle">
+                            <span id="finalScore"></span>/10
+                        </div>
+                    </div>
+                    <div class="results-details" id="resultsDetails">
+                        <!-- Results details will be shown here -->
+                    </div>
+                    <div class="results-actions">
+                        <button class="btn btn-primary" id="restartExercise">Recommencer l'exercice</button>
+                        <button class="btn btn-secondary" id="returnToMenu">Retour au menu</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Application de révision - Droit L2 | Données basées sur vos cours et TD</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
